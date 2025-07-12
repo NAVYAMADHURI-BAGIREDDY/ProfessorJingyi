@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Silk Lab Inspired Colors and Typography */
+:root {
+  --primary-navy: #1a2332;
+  --primary-blue: #2563eb;
+  --accent-teal: #0891b2;
+  --accent-green: #059669;
+  --warm-gray: #6b7280;
+  --light-gray: #f8fafc;
+  --cream: #fefcf3;
+  --charcoal: #374151;
+  --soft-blue: #e0f2fe;
+  --gold: #f59e0b;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  line-height: 1.7;
+  color: var(--charcoal);
+  background-color: var(--cream);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--primary-navy);
+}
+
+/* Custom color classes */
+.text-navy { color: var(--primary-navy); }
+.bg-navy { background-color: var(--primary-navy); }
+.text-blue { color: var(--primary-blue); }
+.bg-blue { background-color: var(--primary-blue); }
+.text-teal { color: var(--accent-teal); }
+.bg-teal { background-color: var(--accent-teal); }
+.text-green { color: var(--accent-green); }
+.bg-green { background-color: var(--accent-green); }
+.text-warm-gray { color: var(--warm-gray); }
+.bg-warm-gray { background-color: var(--warm-gray); }
+.bg-cream { background-color: var(--cream); }
+.bg-soft-blue { background-color: var(--soft-blue); }
+.text-gold { color: var(--gold); }
+.bg-gold { background-color: var(--gold); }
+
+/* Enhanced typography */
+.font-display { font-family: 'Playfair Display', Georgia, serif; }
+.font-body { font-family: 'Inter', sans-serif; }
+
+/* Smooth transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-all duration-200 shadow-sm hover:shadow-md;
+}
+
+.btn-secondary {
+  @apply border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-medium hover:bg-blue-600 hover:text-white transition-all duration-200;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 { font-size: 2rem; line-height: 1.2; }
+  h2 { font-size: 1.75rem; line-height: 1.25; }
+  h3 { font-size: 1.5rem; line-height: 1.3; }
+  body { font-size: 0.95rem; line-height: 1.6; }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  h1 { font-size: 2.5rem; line-height: 1.2; }
+  h2 { font-size: 2rem; line-height: 1.25; }
+  h3 { font-size: 1.75rem; line-height: 1.3; }
+  body { font-size: 1rem; line-height: 1.65; }
+}
+
+@media (min-width: 1025px) {
+  h1 { font-size: 3.5rem; line-height: 1.15; }
+  h2 { font-size: 2.5rem; line-height: 1.2; }
+  h3 { font-size: 2rem; line-height: 1.25; }
+  body { font-size: 1.1rem; line-height: 1.7; }
+}
+
+/* Elegant spacing */
+.section-padding {
+  @apply py-16 sm:py-20 lg:py-24;
+}
+
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8;
+}
