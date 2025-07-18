@@ -61,22 +61,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto container-padding">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-teal mb-4 sm:mb-6 flex justify-center group-hover:scale-110 transition-transform duration-300">
-                  {stat.icon}
-                </div>
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy mb-2 sm:mb-3 font-display">{stat.value}</div>
-                <div className="text-sm sm:text-base lg:text-lg text-warm-gray font-body">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Highlights Section */}
       <section className="section-padding bg-soft-blue">

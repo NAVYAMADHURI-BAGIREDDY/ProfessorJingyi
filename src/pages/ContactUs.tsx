@@ -68,35 +68,7 @@ const ContactUs: React.FC = () => {
     },
   ];
 
-  const facultyContacts = [
-    {
-      name: 'Dr. Sarah Chen',
-      title: 'Principal Investigator',
-      email: 's.chen@uh.edu',
-      phone: '(713) 743-4010',
-      office: 'Engineering Building, Room 305',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specialties: ['Biomedical Imaging', 'Signal Processing'],
-    },
-    {
-      name: 'Dr. Michael Rodriguez',
-      title: 'Associate Professor',
-      email: 'm.rodriguez@uh.edu',
-      phone: '(713) 743-4011',
-      office: 'Engineering Building, Room 307',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specialties: ['Nanomaterials', 'Energy Systems'],
-    },
-    {
-      name: 'Dr. Jennifer Wu',
-      title: 'Assistant Professor',
-      email: 'j.wu@uh.edu',
-      phone: '(713) 743-4012',
-      office: 'Engineering Building, Room 309',
-      image: 'https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=400',
-      specialties: ['Machine Learning', 'AI Applications'],
-    },
-  ];
+  
 
   const inquiryTypes = [
     { value: 'general', label: 'General Inquiry' },
@@ -164,24 +136,7 @@ const ContactUs: React.FC = () => {
                   </div>
                 </div>
                 
-                <div>
-                  <label htmlFor="inquiryType" className="block text-sm font-medium text-gray-700 mb-2">
-                    Inquiry Type
-                  </label>
-                  <select
-                    id="inquiryType"
-                    name="inquiryType"
-                    value={formData.inquiryType}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                  >
-                    {inquiryTypes.map((type) => (
-                      <option key={type.value} value={type.value}>
-                        {type.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
+ 
                 
                 <div>
                   <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
@@ -248,88 +203,13 @@ const ContactUs: React.FC = () => {
                 ))}
               </div>
               
-              {/* Quick Contact Buttons */}
-              <div className="mt-8 space-y-4">
-                <a
-                  href="mailto:lab@uh.edu"
-                  className="w-full bg-red-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-red-700 transition-colors inline-flex items-center justify-center"
-                >
-                  <Mail size={20} className="mr-2" />
-                  Email Us Directly
-                </a>
-                
-                <a
-                  href="tel:+17137434000"
-                  className="w-full border-2 border-red-600 text-red-600 py-3 px-6 rounded-lg font-medium hover:bg-red-50 transition-colors inline-flex items-center justify-center"
-                >
-                  <Phone size={20} className="mr-2" />
-                  Call Us
-                </a>
-              </div>
+
             </div>
           </div>
         </div>
       </section>
 
-      {/* Faculty Contacts */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Faculty Contacts</h2>
-            <p className="text-xl text-gray-600">
-              Connect directly with our research faculty
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {facultyContacts.map((faculty, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
-                <div className="text-center mb-4">
-                  <img
-                    src={faculty.image}
-                    alt={faculty.name}
-                    className="w-20 h-20 rounded-full object-cover mx-auto mb-4"
-                  />
-                  <h3 className="text-lg font-semibold text-gray-900">{faculty.name}</h3>
-                  <p className="text-red-600 font-medium">{faculty.title}</p>
-                </div>
-                
-                <div className="space-y-3">
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Mail size={16} className="mr-3 text-red-600" />
-                    <a href={`mailto:${faculty.email}`} className="hover:text-red-600">
-                      {faculty.email}
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center text-sm text-gray-600">
-                    <Phone size={16} className="mr-3 text-red-600" />
-                    <a href={`tel:${faculty.phone}`} className="hover:text-red-600">
-                      {faculty.phone}
-                    </a>
-                  </div>
-                  
-                  <div className="flex items-center text-sm text-gray-600">
-                    <MapPin size={16} className="mr-3 text-red-600" />
-                    <span>{faculty.office}</span>
-                  </div>
-                </div>
-                
-                <div className="mt-4">
-                  <h4 className="font-medium text-gray-900 mb-2">Specialties</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {faculty.specialties.map((specialty, idx) => (
-                      <span key={idx} className="px-2 py-1 bg-red-100 text-red-800 rounded-full text-xs">
-                        {specialty}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Location Map */}
       <section className="py-16">
@@ -358,51 +238,7 @@ const ContactUs: React.FC = () => {
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
-            <p className="text-xl text-gray-600">
-              Common questions about our research and collaboration opportunities
-            </p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">How can I collaborate with your lab?</h3>
-              <p className="text-gray-600">
-                We welcome collaborations from academic institutions, industry partners, and research organizations. 
-                Contact us with your research proposal and we'll discuss potential opportunities.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Do you offer student research positions?</h3>
-              <p className="text-gray-600">
-                Yes! We regularly offer research opportunities for undergraduate and graduate students. 
-                Check our "Join Us" page for current openings or reach out to discuss possibilities.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">Can I visit your laboratory?</h3>
-              <p className="text-gray-600">
-                Laboratory visits can be arranged by appointment. Please contact us in advance to 
-                schedule a visit and we'll be happy to show you our facilities.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">How do I access your research publications?</h3>
-              <p className="text-gray-600">
-                Our publications are available through our Research page, as well as through academic 
-                databases. For specific papers or collaborations, feel free to contact the relevant faculty member.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
