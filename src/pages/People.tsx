@@ -135,74 +135,7 @@ const People: React.FC = () => {
         </div>
       </section>
 
-      {/* Students Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Students & Researchers</h2>
-            <p className="text-xl text-gray-600">
-              The next generation of scientists and engineers making their mark
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {students.map((student, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <img
-                  src={student.image}
-                  alt={student.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-1">{student.name}</h3>
-                  <div className="flex items-center text-red-600 mb-2">
-                    <GraduationCap size={16} className="mr-1" />
-                    <span className="text-sm">{student.level}</span>
-                  </div>
-                  <p className="text-gray-600 text-sm mb-2">{student.year}</p>
-                  <p className="text-gray-700 text-sm">{student.focus}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Awards Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Recognition & Awards</h2>
-            <p className="text-xl text-gray-600">
-              Celebrating excellence in research and academic achievement
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-red-600 mb-4">
-                <Award size={48} className="mx-auto" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">NSF CAREER Award</h3>
-              <p className="text-gray-600">Dr. Sarah Chen, 2023</p>
-            </div>
-            <div className="text-center">
-              <div className="text-red-600 mb-4">
-                <Award size={48} className="mx-auto" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Best Paper Award</h3>
-              <p className="text-gray-600">IEEE Conference, 2023</p>
-            </div>
-            <div className="text-center">
-              <div className="text-red-600 mb-4">
-                <Award size={48} className="mx-auto" />
-              </div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Young Investigator Award</h3>
-              <p className="text-gray-600">Dr. Jennifer Wu, 2022</p>
-            </div>
-          </div>
-        </div>
-      </section>
+     
     </div>
   );
 };
