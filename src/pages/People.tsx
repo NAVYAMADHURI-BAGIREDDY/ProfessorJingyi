@@ -9,7 +9,7 @@ const People: React.FC = () => {
     department: 'Mechanical & Aerospace Engineering',
     email: 'jluan@uh.edu',
     // Replace with your local headshot (recommended)
-    image: '/public/Assets/luan.png',
+    image: '/Assets/luan.png',
     profile: 'https://www.me.uh.edu/faculty/luan-jingyi',
     specialties: [
       'Nanophotonic & plasmonic biosensing',
