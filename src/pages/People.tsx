@@ -1,142 +1,187 @@
 import React from 'react';
-import { Mail, ExternalLink, GraduationCap, Award } from 'lucide-react';
+import { Mail, ExternalLink } from 'lucide-react';
 
 const People: React.FC = () => {
-  const faculty = [
-    {
-      name: 'Dr. Sarah Chen',
-      title: 'Principal Investigator & Professor',
-      department: 'Biomedical Engineering',
-      image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400',
-      email: 's.chen@uh.edu',
-      bio: 'Dr. Chen leads groundbreaking research in biomedical imaging and signal processing. Her work has been published in over 80 peer-reviewed journals.',
-      specialties: ['Biomedical Imaging', 'Signal Processing', 'Machine Learning'],
-    },
-    {
-      name: 'Dr. Michael Rodriguez',
-      title: 'Associate Professor',
-      department: 'Materials Science',
-      image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=400',
-      email: 'm.rodriguez@uh.edu',
-      bio: 'Expert in advanced materials and nanotechnology with a focus on sustainable energy applications.',
-      specialties: ['Nanotechnology', 'Energy Materials', 'Sustainable Technology'],
-    },
-    {
-      name: 'Dr. Jennifer Wu',
-      title: 'Assistant Professor',
-      department: 'Electrical Engineering',
-      image: 'https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=400',
-      email: 'j.wu@uh.edu',
-      bio: 'Specializes in AI and machine learning applications in biomedical systems.',
-      specialties: ['Artificial Intelligence', 'Machine Learning', 'Biomedical Systems'],
-    },
-  ];
+  // ----- DATA (from your list) -----
+  const PI = {
+    name: 'Jingyi Luan',
+    title: 'Assistant Professor',
+    department: 'Mechanical & Aerospace Engineering',
+    email: 'jluan@uh.edu',
+    // Replace with your local headshot (recommended)
+    image: '/assets/people/jingyi-luan.jpg',
+    profile: 'https://www.me.uh.edu/faculty/luan-jingyi',
+    specialties: [
+      'Nanophotonic & plasmonic biosensing',
+      'DNA nanotechnologies',
+      'Molecular diagnostics',
+    ],
+  };
 
   const students = [
     {
-      name: 'Alex Johnson',
-      level: 'PhD Student',
-      year: '4th Year',
-      focus: 'Biomedical Signal Processing',
-      image: 'https://images.pexels.com/photos/3184398/pexels-photo-3184398.jpeg?auto=compress&cs=tinysrgb&w=400',
+      name: 'Jinyan Wang',
+      role: 'PhD Student',
+      department: 'Mechanical & Aerospace Engineering',
+      email: 'jwang260@CougarNet.UH.EDU',
+      image: '/assets/people/jinyan-wang.jpg',
+      specialties: ['Biomolecular engineering', 'Implantable sensor development'],
     },
     {
-      name: 'Maria Garcia',
-      level: 'PhD Student',
-      year: '2nd Year',
-      focus: 'Nanomaterials',
-      image: 'https://images.pexels.com/photos/3184419/pexels-photo-3184419.jpeg?auto=compress&cs=tinysrgb&w=400',
+      name: 'Rui Wu',
+      role: 'Undergraduate Student',
+      department: 'Mechanical & Aerospace Engineering',
+      email: 'rwu12@CougarNet.UH.EDU',
+      image: '/assets/people/rui-wu.jpg',
+      specialties: ['Ultrasensitive assay development', '3D printing', 'Robotics'],
     },
     {
-      name: 'David Kim',
-      level: 'Master\'s Student',
-      year: '1st Year',
-      focus: 'Machine Learning',
-      image: 'https://images.pexels.com/photos/3184432/pexels-photo-3184432.jpeg?auto=compress&cs=tinysrgb&w=400',
-    },
-    {
-      name: 'Emma Thompson',
-      level: 'Undergraduate',
-      year: '3rd Year',
-      focus: 'Research Assistant',
-      image: 'https://images.pexels.com/photos/3184405/pexels-photo-3184405.jpeg?auto=compress&cs=tinysrgb&w=400',
+      name: 'Linyuan Chi',
+      role: 'Master’s Student',
+      department: 'Electrical & Computer Engineering',
+      email: 'lchi@CougarNet.UH.EDU',
+      image: '/assets/people/linyuan-chi.jpg',
+      specialties: [
+        'Point-of-care assay development',
+        'Electrochemical simulation',
+        'AI-enhanced proteomic analysis',
+      ],
     },
   ];
 
+  // ----- UI -----
   return (
-    <div className="bg-white min-h-screen">
-      {/* Header */}
-      <section className="bg-red-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <main className="bg-white min-h-screen">
+      {/* Hero */}
+      <section className="bg-uh-red text-white py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Team</h1>
-            <p className="text-xl text-red-100 max-w-3xl mx-auto">
-              Meet the brilliant minds driving innovation and discovery in our laboratory
+            <h1 className="text-3xl sm:text-4xl font-extrabold mb-2">People</h1>
+            <p className="text-white/90 max-w-3xl mx-auto">
+              Meet the team advancing biosensing and molecular diagnostics.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Faculty Section */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Faculty</h2>
-            <p className="text-xl text-gray-600">
-              World-class researchers and educators leading cutting-edge investigations
-            </p>
-          </div>
+      {/* PI */}
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-uh-black mb-6 sm:mb-8 text-center">
+            Principal Investigator
+          </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {faculty.map((person, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <article className="mx-auto max-w-4xl rounded-2xl ring-1 ring-uh-gray-200 shadow-elegant overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-[280px_1fr]">
+              <div className="bg-uh-gray-50">
                 <img
-                  src={person.image}
-                  alt={person.name}
-                  className="w-full h-64 object-cover"
+                  src={PI.image}
+                  alt={PI.name}
+                  className="w-full h-64 md:h-full object-cover"
+                  onError={(e) => {
+                    // fallback color block if image missing
+                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  }}
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">{person.name}</h3>
-                  <p className="text-red-600 font-medium mb-2">{person.title}</p>
-                  <p className="text-gray-600 mb-4">{person.department}</p>
-                  <p className="text-gray-700 mb-4">{person.bio}</p>
-                  
-                  <div className="mb-4">
-                    <h4 className="font-medium text-gray-900 mb-2">Specialties:</h4>
+              </div>
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl sm:text-2xl font-semibold text-uh-black">{PI.name}</h3>
+                <p className="text-uh-red font-medium mt-1">{PI.title}</p>
+                <p className="text-uh-gray-700">{PI.department}</p>
+
+                {PI.specialties?.length > 0 && (
+                  <div className="mt-4">
+                    <h4 className="font-medium text-uh-black mb-2">Focus Areas</h4>
                     <div className="flex flex-wrap gap-2">
-                      {person.specialties.map((specialty, idx) => (
-                        <span key={idx} className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">
-                          {specialty}
+                      {PI.specialties.map((s) => (
+                        <span
+                          key={s}
+                          className="px-2.5 py-1 rounded-full text-xs bg-uh-gray-50 ring-1 ring-uh-gray-200"
+                        >
+                          {s}
                         </span>
                       ))}
                     </div>
                   </div>
-                  
-                  <div className="flex items-center space-x-4">
-                    <a
-                      href={`mailto:${person.email}`}
-                      className="flex items-center text-red-600 hover:text-red-700"
-                    >
-                      <Mail size={16} className="mr-1" />
-                      <span className="text-sm">Email</span>
-                    </a>
-                    <a
-                      href="#"
-                      className="flex items-center text-red-600 hover:text-red-700"
-                    >
-                      <ExternalLink size={16} className="mr-1" />
-                      <span className="text-sm">Profile</span>
-                    </a>
-                  </div>
+                )}
+
+                <div className="mt-5 flex flex-wrap items-center gap-4">
+                  <a
+                    href={`mailto:${PI.email}`}
+                    className="inline-flex items-center text-uh-red hover:text-uh-red-dark font-medium"
+                  >
+                    <Mail size={16} className="mr-2" />
+                    {PI.email}
+                  </a>
+                  <a
+                    href={PI.profile}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center text-uh-red hover:text-uh-red-dark font-medium"
+                  >
+                    <ExternalLink size={16} className="mr-2" />
+                    UH Profile
+                  </a>
                 </div>
               </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      {/* Students */}
+      <section className="pb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-uh-black mb-6 sm:mb-8 text-center">
+            Students & Trainees
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {students.map((p) => (
+              <article
+                key={p.email}
+                className="bg-white rounded-2xl ring-1 ring-uh-gray-200 shadow-elegant overflow-hidden"
+              >
+                <img
+                  src={p.image}
+                  alt={p.name}
+                  className="w-full h-48 object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = 'none';
+                  }}
+                />
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold text-uh-black">{p.name}</h3>
+                  <p className="text-uh-red font-medium mt-0.5">{p.role}</p>
+                  <p className="text-uh-gray-700">{p.department}</p>
+
+                  {p.specialties?.length > 0 && (
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      {p.specialties.map((s) => (
+                        <span
+                          key={s}
+                          className="px-2 py-1 rounded-full text-xs bg-uh-gray-50 ring-1 ring-uh-gray-200"
+                        >
+                          {s}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <a
+                    href={`mailto:${p.email}`}
+                    className="mt-4 inline-flex items-center text-uh-red hover:text-uh-red-dark font-medium"
+                  >
+                    <Mail size={16} className="mr-2" />
+                    {p.email}
+                  </a>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
-
-     
-    </div>
+    </main>
   );
 };
 

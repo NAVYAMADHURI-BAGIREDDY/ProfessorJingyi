@@ -6,37 +6,37 @@ const ContactUs: React.FC = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      details: ['lab@uh.edu', 'info@researchlab.uh.edu'],
-      description: 'General inquiries and collaboration opportunities',
+      details: ['engineeringlab@uh.edu', 'contact@uh.edu'],
+      description: 'General inquiries, research collaborations, and student opportunities',
     },
     {
       icon: <Phone size={24} />,
       title: 'Phone',
-      details: ['(713) 743-4000', '(713) 743-4001'],
-      description: 'Direct line to our laboratory',
+      details: ['(713) 743-4500'],
+      description: 'Main office line for the Engineering Laboratory',
     },
     {
       icon: <MapPin size={24} />,
       title: 'Address',
       details: [
-        'Research Laboratory',
+        'Engineering Building 1 (ENG1)',
         'University of Houston',
-        '4800 Calhoun Road',
+        '4726 Calhoun Rd',
         'Houston, TX 77004',
       ],
-      description: 'Visit us on campus',
+      description: 'Visit us in the UH Cullen College of Engineering',
     },
     {
       icon: <Clock size={24} />,
       title: 'Office Hours',
       details: [
-        'Monday - Friday: 8:00 AM - 5:00 PM',
-        'Saturday: 9:00 AM - 1:00 PM',
-        'Sunday: Closed',
+        'Monday - Friday: 9:00 AM - 5:00 PM',
+        'Saturday - Sunday: Closed',
       ],
-      description: 'When you can reach us',
+      description: 'We are available during regular university business hours',
     },
   ];
+  
 
   return (
     <div className="bg-white min-h-screen">
@@ -66,27 +66,39 @@ const ContactUs: React.FC = () => {
       </section>
 
       {/* Visit Our Laboratory Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Laboratory</h2>
-          <p className="text-lg text-gray-600 mb-8">
-            Located in the heart of the University of Houston campus
-          </p>
+      {/* Visit Our Laboratory Section */}
+<section className="py-16 bg-gray-100">
+  <div className="max-w-6xl mx-auto px-4 text-center">
+    <h2 className="text-3xl font-bold text-gray-900 mb-4">Visit Our Laboratory</h2>
+    <p className="text-lg text-gray-600 mb-8">
+      Located in the heart of the University of Houston campus
+    </p>
 
-          <div className="bg-white rounded-lg shadow-md p-8 max-w-xl mx-auto">
-            <MapPin size={40} className="text-red-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Interactive Map</h3>
-            <p className="text-gray-600 mb-4">
-              University of Houston<br />
-              4800 Calhoun Road<br />
-              Houston, TX 77004
-            </p>
-            <button className="bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors">
-              Get Directions
-            </button>
-          </div>
-        </div>
-      </section>
+    <div className="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
+      <MapPin size={40} className="text-red-600 mx-auto mb-4" />
+      <h3 className="text-xl font-semibold text-gray-900 mb-4">Engineering Building Location</h3>
+      <p className="text-gray-600 mb-6">
+        University of Houston<br />
+        Engineering Building 1 (ENG1)<br />
+        4800 Calhoun Road<br />
+        Houston, TX 77004
+      </p>
+
+      {/* Embedded Google Map */}
+      <div className="w-full h-96 rounded-lg overflow-hidden shadow">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3496.4230815156194!2d-95.342293!3d29.721707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640c0b18e6e9c3d%3A0xd1a6a38c04cc4a0!2sEngineering%20Building%201%20-%20University%20of%20Houston!5e0!3m2!1sen!2sus!4v1694201100000!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen={true}
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };

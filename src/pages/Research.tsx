@@ -1,117 +1,121 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+const FALLBACK =
+  'data:image/svg+xml;utf8,' +
+  encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='800'>
+      <rect width='100%' height='100%' fill='#F3F4F6'/>
+      <text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='#9CA3AF' font-family='Arial' font-size='20'>
+        Image unavailable
+      </text>
+    </svg>`
+  );
 
 const Research: React.FC = () => {
-  const researchAreas = [
+  const pillars = [
     {
-      title: 'Biomedical Imaging',
-      description: 'Advanced imaging techniques for medical diagnosis and treatment monitoring.',
-      image: 'https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg?auto=compress&cs=tinysrgb&w=800',
-      projects: 3,
-      funding: '$1.2M',
-      publications: 25,
+      title: 'Non-invasive neurological biomarkers',
+      description:
+        'Identification of non-invasive biomarkers for neurological disorders using advanced nanomaterial- and biomaterial-based detection platforms.',
+      image:
+        'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     },
     {
-      title: 'Signal Processing',
-      description: 'Cutting-edge algorithms for biomedical signal analysis and interpretation.',
-      image: 'https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=800',
-      projects: 2,
-      funding: '$800K',
-      publications: 18,
+      title: 'Wearable & implantable biosensors',
+      description:
+        'Development of wearable and implantable biosensors to enable continuous health monitoring.',
+      image:
+        'https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     },
     {
-      title: 'Machine Learning',
-      description: 'AI-powered solutions for healthcare and biomedical applications.',
-      image: 'https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800',
-      projects: 4,
-      funding: '$1.5M',
-      publications: 32,
-    },
-    {
-      title: 'Nanomaterials',
-      description: 'Novel materials for biomedical and energy applications.',
-      image: 'https://images.pexels.com/photos/3913025/pexels-photo-3913025.jpeg?auto=compress&cs=tinysrgb&w=800',
-      projects: 2,
-      funding: '$900K',
-      publications: 15,
+      title: 'Multiplexed single-molecule detection',
+      description:
+        'Innovation of affordable, multiplexed single-molecule detection technologies for precision medicine.',
+      image:
+        'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     },
   ];
+  
 
   return (
-    <div className="bg-white min-h-screen">
-      {/* Header */}
-      <section className="bg-red-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Research</h1>
-            <p className="text-xl text-red-100 max-w-3xl mx-auto">
-              Pioneering discoveries at the intersection of technology and medicine
-            </p>
-          </div>
+    <main className="bg-white min-h-screen">
+      {/* Hero */}
+      <section className="bg-uh-red text-white py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h1 className="text-3xl md:text-4xl font-extrabold">Research</h1>
+          <p className="mt-3 text-white/90 max-w-3xl mx-auto">
+            Materials-enabled biosensing at the intersection of engineering and medicine.
+          </p>
         </div>
       </section>
 
-      {/* Research Areas */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Research Areas</h2>
-            <p className="text-xl text-gray-600">
-              Exploring diverse fields to advance scientific knowledge and innovation
+      {/* Pillars */}
+      <section className="py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-uh-black">Research Pillars</h2>
+            <p className="mt-3 text-uh-gray-700 max-w-3xl mx-auto">
+              We design materials-enabled biosensing platforms to push the limits of sensitivity,
+              specificity, and accessibility in molecular diagnostics.
             </p>
-          </div>
+          </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {researchAreas.map((area, index) => (
-              <div key={index} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {pillars.map((p, idx) => (
+              <article
+                key={idx}
+                className="bg-white rounded-2xl ring-1 ring-uh-gray-200 shadow-elegant overflow-hidden"
+              >
                 <img
-                  src={area.image}
-                  alt={area.title}
-                  className="w-full h-48 object-cover"
+                  src={p.image}
+                  alt={p.title}
+                  className="w-full h-48 sm:h-56 object-cover"
+                  loading="lazy"
+                  crossOrigin="anonymous"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src = FALLBACK;
+                  }}
                 />
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{area.title}</h3>
-                  <p className="text-gray-600 mb-4">{area.description}</p>
-                  
-                  <div className="grid grid-cols-3 gap-4 mb-4">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-red-600">{area.projects}</div>
-                      <div className="text-sm text-gray-500">Projects</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-red-600">{area.funding}</div>
-                      <div className="text-sm text-gray-500">Funding</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-red-600">{area.publications}</div>
-                      <div className="text-sm text-gray-500">Publications</div>
-                    </div>
-                  </div>
-                  
-                  <button className="text-red-600 font-medium hover:text-red-700 inline-flex items-center">
-                    Learn More
-                    <ArrowRight size={16} className="ml-1" />
-                  </button>
+                <div className="p-6 sm:p-7">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-uh-black">{p.title}</h3>
+                  <p className="mt-3 text-uh-gray-700 text-sm sm:text-base leading-relaxed">
+                    {p.description}
+                  </p>
+                  <Link
+                    to="/contact-us"
+                    className="mt-5 inline-flex items-center font-semibold text-uh-red hover:text-uh-red-dark transition-colors"
+                  >
+                    Learn more
+                    <ArrowRight size={18} className="ml-2" />
+                  </Link>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-red-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold mb-4">Interested in Collaboration?</h2>
-          <p className="text-xl mb-8 text-red-100">
-            Let's discuss how we can work together to advance scientific knowledge.
+      {/* CTA */}
+      <section className="bg-uh-red text-white py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold">Interested in collaborating?</h2>
+          <p className="mt-3 text-white/90 max-w-2xl mx-auto">
+            We welcome partnerships across academia, hospitals, and industry to translate
+            materials-driven biosensing into real-world impact.
           </p>
-          <button className="bg-white text-red-600 px-8 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors">
-            Contact Us
-          </button>
+          <Link
+            to="/contact-us"
+            className="mt-6 inline-flex items-center justify-center rounded-xl bg-white text-uh-red font-semibold px-6 py-3 shadow-md hover:shadow-lg transition"
+          >
+            Contact us
+            <ArrowRight size={18} className="ml-2" />
+          </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 
