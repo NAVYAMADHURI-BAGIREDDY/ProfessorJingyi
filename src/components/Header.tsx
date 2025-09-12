@@ -37,7 +37,7 @@ const Header: React.FC = () => {
 
             <div className="flex flex-col min-w-0 leading-tight">
               <span className="text-lg sm:text-xl lg:text-2xl font-semibold text-uh-black truncate">
-                Jingyi Luan
+              Luan BioNano Lab
               </span>
               <span className="hidden md:block text-sm md:text-base lg:text-lg text-uh-red">
                 Mechanical & Aerospace Engineering

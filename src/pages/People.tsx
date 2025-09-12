@@ -47,6 +47,18 @@ const People: React.FC = () => {
         'AI-enhanced proteomic analysis',
       ],
     },
+    {
+      name: 'Ravi Jada',
+      role: 'Post Doctoral Fellow',
+      department: 'Mechanical Engineering',
+      email: 'rjada@Central.UH.EDU',
+      chat: 'rjada@CougarNet.UH.EDU',
+      location: 'D N227',
+      image: '/assets/people/ravi-jada.jpg', // <- add his headshot here later
+      specialties: [
+        // if you know his focus areas, add them here, otherwise leave empty
+      ],
+    },
   ];
 
   // ----- UI -----
@@ -136,7 +148,7 @@ const People: React.FC = () => {
             Students & Trainees
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {students.map((p) => (
               <article
                 key={p.email}

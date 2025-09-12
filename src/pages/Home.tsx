@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC = () => {
   const stats = [
-    { icon: <Users size={22} className="sm:w-7 sm:h-7" />, value: '6+', label: 'Team Members' },
-    { icon: <BookOpen size={22} className="sm:w-7 sm:h-7" />, value: '25+', label: 'Papers & Preprints' },
+    { icon: <Users size={22} className="sm:w-7 sm:h-7" />, value: '4+', label: 'Team Members' },
+    { icon: <BookOpen size={22} className="sm:w-7 sm:h-7" />, value: '25+', label: 'Papers' },
     { icon: <Award size={22} className="sm:w-7 sm:h-7" />, value: '3', label: 'Research Pillars' },
-    { icon: <Microscope size={22} className="sm:w-7 sm:h-7" />, value: '1', label: 'Open Postdoc' },
+    { icon: <Microscope size={22} className="sm:w-7 sm:h-7" />, value: '1', label: 'Open Postdoc or  Phd ' },
   ];
 
   const highlights = [
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             Advancing next-generation molecular diagnostics
           </h1>
           <p className="mt-5 text-uh-gray-100/90 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto">
-            Pioneering research in biomedical engineering, materials science, and advanced biotechnologies at the University of Houston.
+          Pioneering research in  materials science, biomedical engineering, and advanced biotechnologies at the University of Houston.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center">
@@ -134,7 +134,7 @@ const Home: React.FC = () => {
             Ready to make a difference?
           </h2>
           <p className="mt-3 sm:mt-4 text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">
-            We’re hiring a Postdoctoral Researcher. Join us at the intersection of materials science, bioengineering, and diagnostics.
+            We’re hiring a Postdoctoral  or Phd Researcher. Join us at the intersection of materials science, bioengineering, and diagnostics.
           </p>
           <div className="mt-8">
             <Link
