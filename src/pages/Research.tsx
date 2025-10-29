@@ -23,9 +23,9 @@ const Research: React.FC = () => {
         'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     },
     {
-      title: 'Wearable & implantable biosensors',
+      title: 'In situ nano-sensor for disease monitoring',
       description:
-        'Development of wearable and implantable biosensors to enable continuous health monitoring.',
+        'Capturing dynamic profiles of macromolecular biomarkers to enhance fundamental understanding of diseases and inform early diagnosis through proactive monitoring.',
       image:
         'https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
     },
