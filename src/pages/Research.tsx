@@ -18,7 +18,7 @@ const Research: React.FC = () => {
     {
       title: 'Non-invasive neurological biomarkers',
       description:
-        'Identification of non-invasive biomarkers for neurological disorders using advanced nanomaterial- and biomaterial-based detection platforms.',
+        'Identification of novel, non-invasive biomarkers for neurological disorders harnessing advanced nanomaterial platforms.',
       image:
         'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
     },
