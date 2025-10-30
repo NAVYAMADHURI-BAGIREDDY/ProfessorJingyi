@@ -16,6 +16,13 @@ const People: React.FC = () => {
       ],
     },
     {
+      name: 'Ravi Jada',
+      title: 'Post Doctoral Fellow',
+      department: 'Mechanical Engineering',
+      email: 'rjada@Central.UH.EDU',
+      specialties: ['continuous macromolecular sensor'],
+    },
+    {
       name: 'Jinyan Wang',
       title: 'PhD Student',
       department: 'Mechanical & Aerospace Engineering',
@@ -40,13 +47,7 @@ const People: React.FC = () => {
         'AI-enhanced proteomic analysis',
       ],
     },
-    {
-      name: 'Ravi Jada',
-      title: 'Post Doctoral Fellow',
-      department: 'Mechanical Engineering',
-      email: 'rjada@Central.UH.EDU',
-      specialties: [],
-    },
+
   ];
 
   return (

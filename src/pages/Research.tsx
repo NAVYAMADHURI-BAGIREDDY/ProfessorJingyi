@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import nanosensor from '../images/ChatGPT Image 2025年10月29日 21_11_02.png'
 
 const FALLBACK =
   'data:image/svg+xml;utf8,' +
@@ -26,8 +27,7 @@ const Research: React.FC = () => {
       title: 'In situ nano-sensor for disease monitoring',
       description:
         'Capturing dynamic profiles of macromolecular biomarkers to enhance fundamental understanding of diseases and inform early diagnosis through proactive monitoring.',
-      image:
-        'https://images.pexels.com/photos/267394/pexels-photo-267394.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
+      image:nanosensor,
     },
     {
       title: 'Multiplexed single-molecule detection',
