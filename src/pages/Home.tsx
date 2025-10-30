@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         }}
       >
         <div className="max-w-6xl mx-auto">
-          <h1 className="font-display font-extrabold tracking-tight leading-tight text-3xl sm:text-5xl lg:text-5xl text-uh-black">
+          <h1 className="font-display font-extrabold tracking-tight leading-tight text-3xl sm:text-4xl lg:text-4xl text-uh-black">
             Welcome to the BioNano Lab at the University of Houston
           </h1>
           <p className="mt-6 text-lg sm:text-xl lg:text-2xl text-uh-gray-700 max-w-4xl mx-auto leading-relaxed">

@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import nanosensor from '../images/ChatGPT Image 2025年10月29日 21_11_02.png'
+import nanosensor from '../images/Research_compressed.png'
 
 const FALLBACK =
   'data:image/svg+xml;utf8,' +
