@@ -1,7 +1,10 @@
-import React from 'react';
+// Research.tsx
+import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import nanosensor from '../images/Research_compressed.png'
+import noninvasive from '../images/Left.png';
+import nanosensor from '../images/Middle.png';
+import single from '../images/Right.png';
 
 const FALLBACK =
   'data:image/svg+xml;utf8,' +
@@ -14,34 +17,94 @@ const FALLBACK =
     </svg>`
   );
 
-const Research: React.FC = () => {
-  const pillars = [
-    {
-      title: 'Non-invasive neurological biomarkers',
-      description:
-        'Identification of novel, non-invasive biomarkers for neurological disorders harnessing advanced nanomaterial platforms.',
-      image:
-        'https://images.unsplash.com/photo-1617791160536-598cf32026fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    },
-    {
-      title: 'In situ nano-sensor for disease monitoring',
-      description:
-        'Capturing dynamic profiles of macromolecular biomarkers to enhance fundamental understanding of diseases and inform early diagnosis through proactive monitoring.',
-      image:nanosensor,
-    },
-    {
-      title: 'Multiplexed single-molecule detection',
-      description:
-        'Innovation of affordable, multiplexed single-molecule detection technologies for precision medicine.',
-      image:
-        'https://images.pexels.com/photos/356040/pexels-photo-356040.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800&fit=crop',
-    },
-  ];
-  
+type Pillar = {
+  title: string;
+  description: string;
+  image: string | { src: string; srcSet?: string; alt?: string };
+};
+
+const defaultPillars: Pillar[] = [
+  {
+    title: 'Non-invasive neurological biomarkers',
+    description:
+      'Identification of novel, non-invasive biomarkers for neurological disorders harnessing advanced nanomaterial platforms.',
+    image: noninvasive,
+  },
+  {
+    title: 'In situ nano-sensor for disease monitoring',
+    description:
+      'Capturing dynamic profiles of macromolecular biomarkers to enhance fundamental understanding of diseases and inform early diagnosis through proactive monitoring.',
+    image: nanosensor,
+  },
+  {
+    title: 'Multiplexed single-molecule detection',
+    description:
+      'Innovation of affordable, multiplexed single-molecule detection technologies for precision medicine.',
+    image: single,
+  },
+];
+
+export const PillarCard: React.FC<Pillar & { layout?: 'grid' | 'stack' }> = ({
+  title,
+  description,
+  image,
+  layout = 'grid',
+}) => {
+  const imgObj =
+    typeof image === 'string' ? { src: image, alt: title } : image;
+
+  const [src, setSrc] = useState(imgObj.src || FALLBACK);
+
+  const aspect = layout === 'stack' ? '16/9' : '4/3';
 
   return (
-    <main className="bg-white min-h-screen">
-      {/* Hero */}
+    <article className="bg-white rounded-2xl ring-1 ring-uh-gray-200 shadow-elegant overflow-hidden flex flex-col">
+      <div
+        className="bg-gray-100 flex items-center justify-center w-full"
+        style={{ aspectRatio: aspect }}
+        role="img"
+        aria-label={title}
+      >
+        <img
+          src={src}
+          srcSet={imgObj.srcSet}
+          alt={imgObj.alt || title}
+          loading="lazy"
+          className="max-w-full max-h-full object-contain"
+          onError={() => setSrc(FALLBACK)}
+        />
+      </div>
+
+      <div className="p-6 sm:p-7 flex-1 flex flex-col">
+        <h3 className="text-xl sm:text-2xl font-semibold text-uh-black">{title}</h3>
+
+        <p className="mt-3 text-uh-gray-700 text-sm sm:text-base leading-relaxed flex-1">
+          {description}
+        </p>
+
+        <div className="mt-5">
+          <Link
+            to="/contact-us"
+            className="inline-flex items-center font-semibold text-uh-red hover:text-uh-red-dark transition-colors"
+            aria-label={`Learn more about ${title}`}
+          >
+            Learn more
+            <ArrowRight size={18} className="ml-2" />
+          </Link>
+        </div>
+      </div>
+    </article>
+  );
+};
+
+export const Research: React.FC<{
+  pillars?: Pillar[];
+  layout?: 'grid' | 'stack';
+  className?: string;
+}> = ({ pillars = defaultPillars, layout = 'grid', className = '' }) => {
+  return (
+    <main className={`bg-white ${className}`}>
+      {/* HERO */}
       <section className="bg-uh-red text-white py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1 className="text-3xl md:text-4xl font-extrabold">Research</h1>
@@ -51,50 +114,32 @@ const Research: React.FC = () => {
         </div>
       </section>
 
-      {/* Pillars */}
+      {/* PILLARS */}
       <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-uh-black">Research Pillars</h2>
-            <p className="mt-3 text-uh-gray-700 max-w-3xl mx-auto">
+            <p className="mt-3 text-uh-gray-700 mx-auto max-w-3xl">
               We design materials-enabled biosensing platforms to push the limits of sensitivity,
-              specificity, and accessibility in molecular diagnostics.
+              specificity, and accessibility in molecular diagnostics  innovating nanomaterials and
+              biotechnologies for biomarker discovery, single-molecule detection, and continuous
+              macromolecular monitoring.
             </p>
           </header>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pillars.map((p, idx) => (
-              <article
-                key={idx}
-                className="bg-white rounded-2xl ring-1 ring-uh-gray-200 shadow-elegant overflow-hidden"
-              >
-                <img
-                  src={p.image}
-                  alt={p.title}
-                  className="w-full h-48 sm:h-56 object-cover"
-                  loading="lazy"
-                  crossOrigin="anonymous"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src = FALLBACK;
-                  }}
-                />
-                <div className="p-6 sm:p-7">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-uh-black">{p.title}</h3>
-                  <p className="mt-3 text-uh-gray-700 text-sm sm:text-base leading-relaxed">
-                    {p.description}
-                  </p>
-                  <Link
-                    to="/contact-us"
-                    className="mt-5 inline-flex items-center font-semibold text-uh-red hover:text-uh-red-dark transition-colors"
-                  >
-                    Learn more
-                    <ArrowRight size={18} className="ml-2" />
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+          {layout === 'grid' ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {pillars.map((p, i) => (
+                <PillarCard key={i} {...p} layout="grid" />
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col gap-8">
+              {pillars.map((p, i) => (
+                <PillarCard key={i} {...p} layout="stack" />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
