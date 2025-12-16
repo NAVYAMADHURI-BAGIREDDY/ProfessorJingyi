@@ -120,8 +120,7 @@ export const Research: React.FC<{
           <header className="text-center mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-uh-black">Research Pillars</h2>
             <p className="mt-3 text-uh-gray-700 mx-auto max-w-3xl">
-              We design materials-enabled biosensing platforms to push the limits of sensitivity,
-              specificity, and accessibility in molecular diagnostics  innovating nanomaterials and
+              We design innovating nanomaterials and
               biotechnologies for biomarker discovery, single-molecule detection, and continuous
               macromolecular monitoring.
             </p>
