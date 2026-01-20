@@ -6,7 +6,7 @@ const ContactUs: React.FC = () => {
     {
       icon: <Mail size={24} />,
       title: 'Email',
-      details: ['engineeringlab@uh.edu', 'contact@uh.edu'],
+      details: ['jluan@uh.edu '],
       description: 'General inquiries, research collaborations, and student opportunities',
     },
     {
@@ -19,12 +19,12 @@ const ContactUs: React.FC = () => {
       icon: <MapPin size={24} />,
       title: 'Address',
       details: [
-        'Engineering Building 1 (ENG1)',
+        'Room 534A ,SR2 Science & Research Building 23455 Cullen Blvd',
         'University of Houston',
         '4726 Calhoun Rd',
         'Houston, TX 77004',
       ],
-      description: 'Visit us in the UH Cullen College of Engineering',
+
     },
     {
       icon: <Clock size={24} />,
@@ -76,11 +76,10 @@ const ContactUs: React.FC = () => {
 
     <div className="bg-white rounded-lg shadow-md p-8 max-w-4xl mx-auto">
       <MapPin size={40} className="text-red-600 mx-auto mb-4" />
-      <h3 className="text-xl font-semibold text-gray-900 mb-4">Engineering Building Location</h3>
       <p className="text-gray-600 mb-6">
+      Room 534A ,SR2 Science & Research Building 23455 Cullen Blvd<br />
         University of Houston<br />
-        Engineering Building 1 (ENG1)<br />
-        4800 Calhoun Road<br />
+        4726 Calhoun Road<br />
         Houston, TX 77004
       </p>
 

@@ -21,8 +21,10 @@ const Footer: React.FC = () => {
               <div className="flex items-start gap-3">
                 <MapPin size={18} className="text-uh-red flex-shrink-0 mt-1" />
                 <span>
-                  Office: N229, Engineering Building 1<br className="hidden sm:block" />
-                  University of Houston
+                Room 534A <br />
+                SR2 (Science & Research Building) <br />
+                23455 Cullen Blvd, Houston, TX 77004<br className="hidden sm:block" />
+
                 </span>
               </div>
             </div>
@@ -43,11 +45,6 @@ const Footer: React.FC = () => {
           {/* Department / Mailing */}
           <div className="md:col-span-2 lg:col-span-1">
             <h3 className="text-xl font-semibold mb-4 sm:mb-6">Mechanical & Aerospace Engineering</h3>
-            <p className="text-uh-gray-100 mb-4 sm:mb-6 leading-relaxed">
-              Engineering Building 1, Room N207<br />
-              4226 Martin Luther King Blvd<br />
-              Houston, TX 77204-4006
-            </p>
             <div className="flex items-center gap-3 text-uh-gray-100">
               <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-md bg-uh-red grid place-items-center">
                 {/* Replace with official UH SVG if available */}

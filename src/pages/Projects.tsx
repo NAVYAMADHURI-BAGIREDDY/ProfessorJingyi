@@ -24,7 +24,7 @@ const Publications: React.FC = () => {
       authors: 'Jada R, Luan J.',
       journal: 'ACS Applied Materials & Interfaces',
       year: 2025,
-      note: 'submitted',
+      note: 'Under Review',
       link: scholar(
         'Toward Real-Time Monitoring of Macromolecular Biomarkers: A Materials Roadmap for Continuous Biosensing ACS Applied Materials & Interfaces Jada Luan'
       ),
@@ -39,6 +39,14 @@ const Publications: React.FC = () => {
       link: scholar(
         'Room-Temperature-Fabricated Large-Area Catalysts for Ampere-Scale Seawater Oxidation ACS Energy Letters 2025'
       ),
+    },
+    {
+      title:
+        'Rapid urinary lipoarabinomannan test with laboratory-level sensitivity for tuberculosis detection: a performance evaluation',
+      authors: 'Qisheng Jiang, Harisha Manoharappa, et al.',
+      journal: 'Microbiology Spectrum',
+      year: 2025,
+      link: 'https://doi.org/10.1128/spectrum.03042-25',
     },
   ];
 
