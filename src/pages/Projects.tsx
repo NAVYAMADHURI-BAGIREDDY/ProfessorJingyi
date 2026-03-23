@@ -24,9 +24,9 @@ const Publications: React.FC = () => {
       authors: 'Jada R, Luan J.',
       journal: 'ACS Applied Materials & Interfaces',
       year: 2025,
-      note: 'Under Review',
+      note: 'Published',
       link: scholar(
-        'Toward Real-Time Monitoring of Macromolecular Biomarkers: A Materials Roadmap for Continuous Biosensing ACS Applied Materials & Interfaces Jada Luan'
+        'https://pubs.acs.org/doi/abs/10.1021/acsami.5c21543'
       ),
     },
     {
